@@ -6,24 +6,19 @@ const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({children}) =>{
 
-    const [favorites, setFavorites] = useState([]);
+    const [favorites, setFavorites] = useState(() => {
+    const data = localStorage.getItem("favorites");
+    return data ? JSON.parse(data) : [];
+    });
 
     useEffect(() => {
-        const data = localStorage.getItem("favorites");
-
-        if(data){
-            setFavorites(JSON.parse(data));
-        }
-    },[])
-
-    // save
-    useEffect(() => {
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-    },[favorites]);
+    console.log("Saving:", favorites);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    }, [favorites]);
 
     // add fav
     const addFavorite = (user) => {
-        setFavorites([...favorites, user])
+         setFavorites((prev) => [...prev, user]);
     }
 
     // remove 
