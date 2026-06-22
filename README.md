@@ -12,4 +12,4 @@
 - React Icons
 
 ## Live Demo
-git-hub-profile-explorer-pi.vercel.app
+https://git-hub-profile-explorer-pi.vercel.app
