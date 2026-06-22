@@ -6,10 +6,5 @@
 - View repositories
 - Error handling
 
-## Tech Stack
-- React
-- Axios
-- React Icons
-
 ## Live Demo
 https://git-hub-profile-explorer-pi.vercel.app
